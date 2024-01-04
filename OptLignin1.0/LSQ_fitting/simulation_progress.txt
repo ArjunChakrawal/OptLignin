@@ -1,0 +1,131 @@
+Starting run_all_fitting.m
+
+Starting run_all_fitting.m
+
+Starting Berg_fittinglsq.m.........2024/01/03 17:21:55:002
+Finished Berg_fittinglsq.m.........2024/01/03 17:22:25:977
+
+Starting Fioretto_2005_fittinglsq.m.........2024/01/03 17:22:25:993
+Finished Fioretto_2005_fittinglsq.m.........2024/01/03 17:22:39:304
+
+Starting He_2016_fittinglsq.m.........2024/01/03 17:22:39:319
+Finished He_2016_fittinglsq.m.........2024/01/03 17:22:48:211
+
+Starting He_2019_fittinglsq.m.........2024/01/03 17:22:48:211
+Finished He_2019_fittinglsq.m.........2024/01/03 17:23:00:601
+
+Starting Hirobe_fittinglsq.m.........2024/01/03 17:23:00:617
+Finished Hirobe_fittinglsq.m.........2024/01/03 17:23:26:664
+
+Starting Huang2021_fittinglsq.m.........2024/01/03 17:23:26:680
+Finished Huang2021_fittinglsq.m.........2024/01/03 17:23:37:289
+
+Starting Kou2015_fittinglsq.m.........2024/01/03 17:23:37:297
+Starting run_all_fitting.m
+
+Starting Berg_fittinglsq.m.........2024/01/03 17:23:43:596
+Finished Kou2015_fittinglsq.m.........2024/01/03 17:23:54:386
+
+Starting MagilandAber1998_fittinglsq.m.........2024/01/03 17:23:54:386
+Finished Berg_fittinglsq.m.........2024/01/03 17:24:23:937
+
+Starting Fioretto_2005_fittinglsq.m.........2024/01/03 17:24:23:937
+Finished MagilandAber1998_fittinglsq.m.........2024/01/03 17:24:37:175
+
+Starting McKee2016_fittinglsq.m.........2024/01/03 17:24:37:175
+Finished Fioretto_2005_fittinglsq.m.........2024/01/03 17:24:39:587
+
+Starting He_2016_fittinglsq.m.........2024/01/03 17:24:39:603
+Finished McKee2016_fittinglsq.m.........2024/01/03 17:24:46:289
+
+Starting Osono2017_fittinglsq.m.........2024/01/03 17:24:46:305
+Finished He_2016_fittinglsq.m.........2024/01/03 17:24:48:989
+
+Starting He_2019_fittinglsq.m.........2024/01/03 17:24:49:004
+Finished He_2019_fittinglsq.m.........2024/01/03 17:25:00:961
+
+Starting Hirobe_fittinglsq.m.........2024/01/03 17:25:00:976
+Finished Osono2017_fittinglsq.m.........2024/01/03 17:25:14:770
+
+Starting Osono_04_fittinglsq.m.........2024/01/03 17:25:14:785
+Finished Hirobe_fittinglsq.m.........2024/01/03 17:25:31:032
+
+Starting Huang2021_fittinglsq.m.........2024/01/03 17:25:31:048
+Finished Huang2021_fittinglsq.m.........2024/01/03 17:25:42:958
+
+Starting Kou2015_fittinglsq.m.........2024/01/03 17:25:42:971
+Finished Kou2015_fittinglsq.m.........2024/01/03 17:26:01:179
+
+Starting MagilandAber1998_fittinglsq.m.........2024/01/03 17:26:01:194
+Finished Osono_04_fittinglsq.m.........2024/01/03 17:26:08:254
+
+Starting Preston09_fittinglsq.m.........2024/01/03 17:26:08:270
+Finished Preston09_fittinglsq.m.........2024/01/03 17:26:39:874
+
+Starting Ruzek2021_fittinglsq.m.........2024/01/03 17:26:39:889
+Finished MagilandAber1998_fittinglsq.m.........2024/01/03 17:26:43:378
+
+Starting McKee2016_fittinglsq.m.........2024/01/03 17:26:43:393
+Finished Ruzek2021_fittinglsq.m.........2024/01/03 17:26:53:275
+
+Starting Snajdr_fittinglsq.m.........2024/01/03 17:26:53:290
+Finished Snajdr_fittinglsq.m.........2024/01/03 17:27:01:895
+
+Starting Tu2011_fittinglsq.m.........2024/01/03 17:27:01:904
+Starting run_all_fitting.m
+
+Starting Berg_fittinglsq.m.........2024/01/03 21:12:15:437
+Finished Berg_fittinglsq.m.........2024/01/03 21:12:48:697
+
+Starting Fioretto_2005_fittinglsq.m.........2024/01/03 21:12:48:705
+Finished Fioretto_2005_fittinglsq.m.........2024/01/03 21:13:02:579
+
+Starting He_2016_fittinglsq.m.........2024/01/03 21:13:02:588
+Finished He_2016_fittinglsq.m.........2024/01/03 21:13:11:311
+
+Starting He_2019_fittinglsq.m.........2024/01/03 21:13:11:319
+Finished He_2019_fittinglsq.m.........2024/01/03 21:13:22:656
+
+Starting Hirobe_fittinglsq.m.........2024/01/03 21:13:22:668
+Finished Hirobe_fittinglsq.m.........2024/01/03 21:13:50:380
+
+Starting Huang2021_fittinglsq.m.........2024/01/03 21:13:50:390
+Finished Huang2021_fittinglsq.m.........2024/01/03 21:14:01:539
+
+Starting Kou2015_fittinglsq.m.........2024/01/03 21:14:01:550
+Finished Kou2015_fittinglsq.m.........2024/01/03 21:14:18:259
+
+Starting MagilandAber1998_fittinglsq.m.........2024/01/03 21:14:18:269
+Finished MagilandAber1998_fittinglsq.m.........2024/01/03 21:14:56:474
+
+Starting McKee2016_fittinglsq.m.........2024/01/03 21:14:56:491
+Finished McKee2016_fittinglsq.m.........2024/01/03 21:15:04:843
+
+Starting Osono2017_fittinglsq.m.........2024/01/03 21:15:04:852
+Finished Osono2017_fittinglsq.m.........2024/01/03 21:15:31:067
+
+Starting Osono_04_fittinglsq.m.........2024/01/03 21:15:31:078
+Finished Osono_04_fittinglsq.m.........2024/01/03 21:16:18:540
+
+Starting Preston09_fittinglsq.m.........2024/01/03 21:16:18:553
+Finished Preston09_fittinglsq.m.........2024/01/03 21:16:46:802
+
+Starting Ruzek2021_fittinglsq.m.........2024/01/03 21:16:46:815
+Finished Ruzek2021_fittinglsq.m.........2024/01/03 21:17:00:588
+
+Starting Snajdr_fittinglsq.m.........2024/01/03 21:17:00:597
+Finished Snajdr_fittinglsq.m.........2024/01/03 21:17:11:670
+
+Starting Tu2011_fittinglsq.m.........2024/01/03 21:17:11:679
+Finished Tu2011_fittinglsq.m.........2024/01/03 21:17:40:852
+
+Starting Tu2014_fittinglsq.m.........2024/01/03 21:17:40:862
+Finished Tu2014_fittinglsq.m.........2024/01/03 21:18:58:861
+
+Starting Yue2016_fittinglsq.m.........2024/01/03 21:18:58:871
+Finished Yue2016_fittinglsq.m.........2024/01/03 21:19:12:175
+
+Starting Zhou2017_fittinglsq.m.........2024/01/03 21:19:12:185
+Finished Zhou2017_fittinglsq.m.........2024/01/03 21:19:25:868
+
+All simulations finished!!

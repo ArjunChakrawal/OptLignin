@@ -1,0 +1,2 @@
+Starting run_all_fitting.m
+
