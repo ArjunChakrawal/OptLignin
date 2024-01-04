@@ -2,11 +2,11 @@
 
 This repository contains the code and resources in support of the article titled "Optimal ligninolytic activity during plant litter decomposition" by  Chakrawal et al. 2024.
 
-In our study, we investigated optimal control problems related to ligninolytic activity during plant litter decomposition. We utilized a MATLAB-based tool developed by Viktor Leek at the Division of Vehicular Systems, Linköping University. For detailed installation guidelines and examples, please visit [YOptimization](https://www.yoptimization.com/). To ensure the reproducibility of our work, we have archived the specific YOptimization version used in our repository. It's important to note that another necessary component for YOptimization is CasADi; specifically, we utilized the [casadi-windows-matlabR2016a-v3.5.5 version](https://github.com/casadi/casadi/releases/download/3.5.5/casadi-windows-matlabR2016a-v3.5.5.zip).
+In our study, we investigated optimal control problems related to ligninolytic activity during plant litter decomposition. We utilized a MATLAB-based tool developed by Viktor Leek at the Division of Vehicular Systems, Linköping University. For detailed installation guidelines and examples, please visit [Yoptimization](https://www.yoptimization.com/). To ensure the reproducibility of our work, we have archived the specific Yoptimization version used in our repository. It's important to note that another necessary component for Yoptimization is CasADi; specifically, we utilized the [casadi-windows-matlabR2016a-v3.5.5 version](https://github.com/casadi/casadi/releases/download/3.5.5/casadi-windows-matlabR2016a-v3.5.5.zip).
 
 ## Folder structure
 
-- **YOP benchmark**: The YOP webpage has many worked out [examples](https://www.yoptimization.com/examples). We have included additional examples relevant for microbial ecology, in the YOP benchmark folder, demonstrating the capabilities of the toolbox.
+- **Yop benchmark**: The Yop webpage has many worked out [examples](https://www.yoptimization.com/examples). We have included additional examples relevant for microbial ecology, in the Yop benchmark folder, demonstrating the capabilities of the toolbox.
 	- Examples from Lenhart and Workman, Optimal control applied to biological models
 	- Manzoni et al. 2022
 	- Xuezhong Wang_Solving optimal control problems with MATLAB
