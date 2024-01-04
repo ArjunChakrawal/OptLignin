@@ -2,7 +2,7 @@
 
 This repository contains the code and resources in support of the article titled "Optimal ligninolytic activity during plant litter decomposition" by  Chakrawal et al. 2024.
 
-	In our study, we investigated optimal control problems related to ligninolytic activity during plant litter decomposition. We utilized a MATLAB-based tool developed by Viktor Leek at the Division of Vehicular Systems, Linköping University. For detailed installation guidelines and examples, please visit [YOptimization](https://www.yoptimization.com/). To ensure the reproducibility of our work, we have archived the specific YOptimization version used in our repository. It's important to note that another necessary component for YOptimization is CasADi; specifically, we utilized the casadi-windows-matlabR2016a-v3.5.5 version.
+In our study, we investigated optimal control problems related to ligninolytic activity during plant litter decomposition. We utilized a MATLAB-based tool developed by Viktor Leek at the Division of Vehicular Systems, Linköping University. For detailed installation guidelines and examples, please visit [YOptimization](https://www.yoptimization.com/). To ensure the reproducibility of our work, we have archived the specific YOptimization version used in our repository. It's important to note that another necessary component for YOptimization is CasADi; specifically, we utilized the casadi-windows-matlabR2016a-v3.5.5 version.
 
 ## Folder structure
 
