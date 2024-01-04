@@ -29,7 +29,7 @@ yvarstr={'tau','avgvo','obj'};
 
 fig = figure;
 clf;
-fig.Position=[100,300,908,496];
+fig.Position(3:4)=[908,496];
 
 t = tiledlayout(3, 4);
 set(gcf, 'Color', 'w')

@@ -35,7 +35,7 @@ param.CT_0=obs_data.Ct_obs(1);
 % [par,sol,~,~] = find_parameter(obs_data,...
 %     param,init_guess,g,figure,@makeplot_state_space,@ysim_state_space,n);
 [~,sol] =  opt_con(param,g,par,obs_data.tobs(end)*n);
-plot_figure4(sol,obs_data, ax,LC(1,:),param)
+plot_figure5(sol,obs_data, ax,LC(1,:),param)
 [r2, rmse] = est_r2_rmse(obs_data, sol);
 Rsquare =[Rsquare,r2];
 RMSE =[RMSE,rmse];
@@ -82,7 +82,7 @@ param.emax = emax_fun(CN0(i));
 par = par_est(29, 3:5);
 [~, sol] = opt_con(param, g, par, obs_data.tobs(end).*n);
 
-plot_figure4(sol,obs_data, ax,LC(2,:),param)
+plot_figure5(sol,obs_data, ax,LC(2,:),param)
 [r2, rmse] = est_r2_rmse(obs_data, sol);
 Rsquare =[Rsquare,r2];
 RMSE =[RMSE,rmse];ARC0=[ARC0;param.CO_0];
@@ -106,7 +106,7 @@ param.CT_0 = obs_data.Ct_obs(1);
 param.emax = emax_fun(CN0_osono(i));
 par = par_est(i, 2:4);
 [~, sol] = opt_con(param, g, par, obs_data.tobs(end).*n);
-plot_figure4(sol,obs_data, ax,LC(3,:),param)
+plot_figure5(sol,obs_data, ax,LC(3,:),param)
 [r2, rmse] = est_r2_rmse(obs_data, sol);
 Rsquare =[Rsquare,r2];
 RMSE =[RMSE,rmse];ARC0=[ARC0;param.CO_0];
@@ -126,7 +126,7 @@ param.CT_0 = obs_data.Ct_obs(1);
 param.emax = emax_fun(CN0);
 par = par_est(i, 2:4);
 [~, sol] = opt_con(param, g, par, obs_data.tobs(end).*n);
-plot_figure4(sol,obs_data, ax,LC(4,:),param)
+plot_figure5(sol,obs_data, ax,LC(4,:),param)
 [r2, rmse] = est_r2_rmse(obs_data, sol);
 Rsquare =[Rsquare,r2];
 RMSE =[RMSE,rmse];ARC0=[ARC0;param.CO_0];
@@ -160,7 +160,7 @@ end
 exportgraphics(fig, 'results/Figure5.png', Resolution = 300)
 
 %%
-function plot_figure4(sol,obs_data,ax,LC,param)
+function plot_figure5(sol,obs_data,ax,LC,param)
 
 ro = sol.NumericalResults.Parameter(3); %Y
 % time = sol.NumericalResults.Independent ;

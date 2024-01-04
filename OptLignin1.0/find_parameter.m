@@ -28,11 +28,11 @@ problem = createOptimProblem('lsqcurvefit', ...
     'options', options1);
 
 % 
-tic;[par, ~, ~, ~, ~, ~, ~] = lsqcurvefit(problem);toc;
-tic;
-ms=MultiStart("UseParallel",false);
-[par,fval,exitflag,outpt,solutions] = run(ms,problem,50);
-toc;
+[par, ~, ~, ~, ~, ~, ~] = lsqcurvefit(problem); 
+% tic;
+% ms=MultiStart("UseParallel",false);
+% [par,fval,exitflag,outpt,solutions] = run(ms,problem,50);
+% toc;
 [~, sol] = opt_con(param, g, par, obs_data.tobs(end)*n);
 
 [r2, rmse, r2_co, rmse_co, r2_CT,rmse_CT]= est_r2_rmse(obs_data,sol);
