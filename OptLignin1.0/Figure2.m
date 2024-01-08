@@ -111,7 +111,7 @@ lh.Position(2)= lh.Position(2)+0.035;lh.Position(1)= lh.Position(1)-0.01;
 
 set(ax(1:2,2:4),'YtickLabel',[])
 
-exportgraphics(fig, 'results/Figure3.png', 'Resolution','300')
+exportgraphics(fig, 'results/Figure2.png', 'Resolution','300')
 
 
 %%

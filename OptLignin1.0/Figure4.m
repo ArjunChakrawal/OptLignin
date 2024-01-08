@@ -157,7 +157,7 @@ str='abc';
 for j=1:3
         text(ax(j),0.87,0.9,"("+str(j)+")",'Units','normalized')
 end
-exportgraphics(fig, 'results/Figure5.png', Resolution = 300)
+exportgraphics(fig, 'results/Figure4.png', Resolution = 300)
 
 %%
 function plot_figure5(sol,obs_data,ax,LC,param)

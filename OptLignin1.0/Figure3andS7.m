@@ -126,7 +126,7 @@ yL = ylim(ax(3,2));
 y = [0 0 yL(2) yL(2)];
 patch(ax(3,2),x,y,'black','FaceAlpha',0.1,'EdgeColor','none')
 
-exportgraphics(fig, 'results/Figure4.png', Resolution = 300)
+exportgraphics(fig, 'results/Figure3.png', Resolution = 300)
 %% figureS7
 ARC0 = linspace(0,0.2,21);
 ro = [0,0.1, 1, 10, 100];

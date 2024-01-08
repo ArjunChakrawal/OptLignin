@@ -39,25 +39,25 @@ ci = nlparci(bestbeta,R,'Jacobian',J);
 lower = ypred - delta;
 upper = ypred + delta;
 
-
-
+LC =linspecer(1);
 figure;
 yp = modelfun(bestbeta, aromatic) ./ bestbeta(2);
-gscatter(aromatic, y_norm); hold on
+scatter(aromatic, y_norm,'ok','LineWidth',3); hold on
 hold on
-plot(l, ypred./bestbeta(2), 'k', 'LineWidth', 2)
-plot(l, lower./bestbeta(2), '--', 'LineWidth', 1.5, 'Color',[1 1 1]*0.5)
-plot(l, upper./bestbeta(2), '--', 'LineWidth', 1.5, 'Color',[1 1 1]*0.5)
-ylabel("$p(l)$",'interpreter', 'latex')
-p=plot(nan,nan, 'k', 'LineWidth', 2);
-legend(p,"$ p=exp{\left(-\left(\frac{l}{a}\right)^2\right)}$",'Fontsize',14, ...
-    'interpreter', 'latex')
-xlabel('$\it l= C_O/(C_O+C_H)$ [Aromatic C \ total C$^{-1}$]','interpreter', 'latex');
-set(gca, 'Fontsize',12, 'LineWidth', 0.45, ...
+plot(l, ypred./bestbeta(2), 'Color',LC, 'LineWidth', 4)
+plot(l, lower./bestbeta(2), '--','Color',LC, 'LineWidth', 2)
+plot(l, upper./bestbeta(2), '--','Color',LC, 'LineWidth', 2)
+% ylabel("$p(l)$",'interpreter', 'latex')
+% p=plot(nan,nan, 'Color',LC, 'LineWidth', 2);
+% lh=legend(p,"$ p=exp{\left(-\left(\frac{l}{a}\right)^2\right)}$",'Fontsize',16, ...
+%     'interpreter', 'latex');
+% lh.Box='off';
+% xlabel('$\it l= C_O/(C_O+C_H)$ [Aromatic C \ total C$^{-1}$]','interpreter', 'latex');
+set(gca, 'Fontsize',16, 'LineWidth', 0.45, ...
     'Xcolor', [1, 1, 1]*0, 'Ycolor', [1, 1, 1]*0)
 set(gcf,'color','w')
 xlim([0, 0.5]); ylim([0, 1])
 rss = sum((y_norm - yp).^2);
 sst = sum((y_norm - mean(y_norm)).^2);
 r2 =  1 - rss / sst;
-exportgraphics(gcf, 'results\Figure2_p_function.png','Resolution',300)
+exportgraphics(gcf, 'results\Figure1b_p_function.png','Resolution',300)

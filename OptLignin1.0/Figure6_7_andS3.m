@@ -23,10 +23,10 @@ for i =1:length(study)
     rawdata.studyID(idd)=id(i);
 end
 
-rawdata.vhmax=rawdata.vhmax*365; % per year
-rawdata.avg_vo = rawdata.avg_vo*365; % per year
-rawdata.max_vo = rawdata.max_vo*365; % per year
-rawdata.voAtTau = rawdata.voAtTau*365; % per year
+% rawdata.vhmax=rawdata.vhmax*365; % per year
+% rawdata.avg_vo = rawdata.avg_vo*365; % per year
+% rawdata.max_vo = rawdata.max_vo*365; % per year
+% rawdata.voAtTau = rawdata.voAtTau*365; % per year
 
 rawdata.tau = rawdata.tau; % in year
 c= quantile(rawdata.tau, .5)^2/quantile(rawdata.tau, .75);
@@ -53,7 +53,7 @@ rawdata.ARC0_S = normalize(rawdata.ARC0);
 R = 8.314e-3; %kJ mol-1 K-1
 col={'studyID','LitterType','Ntreat','MATC','MAPMm','CN0','ARC0','AN0','tau','vhmax','avg_vo','ro','max_vo','voAtTau'};
 tempdata=rawdata(:,col);
-delete("Rcode\fit_results_table.xlsx");
+delete("data_forRStudio.xlsx");
 writetable(tempdata,"data_forRStudio.xlsx")
 
 col={'studyID','MAT_S','MAP_S','CN0_S','ARC0_S','tautf','logro','logvh','logavgvo','logmax_vo'};
@@ -71,7 +71,7 @@ xticklabels({'MAT_S','\it{CN_{0,S}}','{\itARC_{0,S}}','MAT_S\times{\itCN_{0,S}}'
 yaxisproperties= get(gca, 'YAxis');
 yaxisproperties.TickLabelInterpreter = 'latex';   % tex for y-axis
 title('')
-exportgraphics(gcf, 'results\Figure7.png', Resolution=300)
+exportgraphics(gcf, 'results\Figure6.png', Resolution=300)
 %% Temperature sensitivity Q10
 close all
 target ={'tautf','logro','logvh','logavgvo','logmax_vo'};
@@ -192,7 +192,7 @@ p(6)=plot(sMAT,sMAT*coeff_T_Allison2018_ligno-0.5,'--',LineWidth=2,Color='k',...
 
 lh=legend('show',p); lh.Box="off";lh.Location='bestoutside';
 title(lh,'{\it CN_{0,S}}')
-exportgraphics(fig, 'results\Figure8.png', Resolution=300)
+exportgraphics(fig, 'results\Figure7.png', Resolution=300)
 %% Temperature sensitivity Activation Energy 
 close all
 rawdata.Tinv = 1./(rawdata.MATC+273);
@@ -214,15 +214,16 @@ Ea_maxvo_se=lme{3}.Coefficients.SE(4)/std(rawdata.Tinv)*R; %kJ mol-1
 close all
 LC=summer(3);
 rawdata.MAPMm=rawdata.MAPMm*0.001;
-rawdata.tau=rawdata.tau./365;
+% rawdata.tau=rawdata.tau./365;
 newdata = renamevars(rawdata, {'MATC','MAPMm','logCN0','ARC0','logAN0',...
     'tau','logvh','logavgvo','logmax_vo','logro'},...
     {'MAT [$^o$C]','MAP[m]','log(CN$_{0})$','ARC$_{0}$','log(AN$_{0})$',...
-    '$\tau$ [Y]','log ($v_H$)','log $(\bar{v}_O)$','log(max(${v}_O))$','log ({$r_O$})'});
+    '$\tau$','log ($v_H$)','log $(\bar{v}_O)$', ...
+    'log(max(${v}_O))$','log ({$r_O$})'});
 
 cols_to_plot= {'MAT [$^o$C]','MAP[m]','log(CN$_{0})$','ARC$_{0}$','log(AN$_{0})$',...
-    '$\tau$ [Y]','log ($v_H$)','log $(\bar{v}_O)$','log(max(${v}_O))$','log ({$r_O$})'};
-
+    '$\tau$','log ($v_H$)','log $(\bar{v}_O)$', ...
+    'log(max(${v}_O))$','log ({$r_O$})'};
 scatterplot_with_correlation(newdata,cols_to_plot,cols_to_plot, 0.05,'',...
     20,'MarkerFaceColor',LC(2,:),'MarkerEdgeColor','none')
 fig=gcf;

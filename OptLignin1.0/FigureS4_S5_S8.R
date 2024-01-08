@@ -169,8 +169,8 @@ Q10 = data.frame('$log(v[H])' = b_vh$t, '$log(bar(v)[O])' = b_avg_vo$t, '$log(ma
 png("results/FigureS5.png", width = 10*1.66, height = 10, units = "cm", res = 300)
 par(mar = c(2, 4, 2, 2)) # c(bottom, left, top, right)
 # par(oma = c(0, 0, 0, 0))
-label <- c(expression(paste("log ", italic((v[H])))), expression(paste("log ", italic( (bar(v)[O]) ))),
-           expression(paste("log ", italic(max((v[O]))))))
+label <- c(expression(paste(italic(v[H]))), expression(paste(italic( bar(v)[O] ))),
+           expression(paste(italic(max((v[O]))))))
 boxplot(Q10, names = label, ylab = expression(Q[10]), ylim = c(0, 2.5))
 grid()
 dev.off()

@@ -93,6 +93,6 @@ ax = sns.boxplot(data=newdata, y='BIC', x=xlevel, orient='v', palette=sns.color_
 plt.xlabel('')
 plt.ylabel(r'$\it BIC $')
 plt.tight_layout()
-plt.savefig('results/Figure6.png', dpi=300)
+plt.savefig('results/Figure5.png', dpi=300)
 plt.show()
 
