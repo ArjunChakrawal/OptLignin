@@ -19,14 +19,12 @@ name_counts = data['study_name'].value_counts()
 
 lat = data.loc[~np.isnan(data['Lattitude_N_']), 'Lattitude_N_']
 long = data.loc[~np.isnan(data['Longitude_E_']), 'Longitude_E_']
-
-
 loc = pd.DataFrame({'Latitude': lat, 'Longitude': long})
 fig = px.scatter_geo(loc, lat='Latitude', lon='Longitude', color_discrete_sequence=['red'])
 fig.update_geos(projection_type="natural earth")  # You can choose a different projection type
 
 fig.update_layout(title_text='Your Title',margin=dict(l=0, r=0, b=0, t=0))
-fig.write_html('first_figure.html', auto_open=True)
+# fig.write_html('first_figure.html', auto_open=True)
 fig.update_layout(margin=dict(l=0, r=0, b=0, t=0))
 export_params = dict(format='png', width=1200, height=800, scale=3)
 fig.write_image("results/FigureS1.png",**export_params)
