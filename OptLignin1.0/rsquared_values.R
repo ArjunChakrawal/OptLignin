@@ -1,3 +1,4 @@
+# R Script Copyright (c) 2023 Arjun Chakrawal
 
 library("readxl")
 library(modelsummary)
@@ -71,3 +72,4 @@ rsquared_df$model <- rownames(rsquared_df)
 
 # Write the result to a CSV file
 write.csv(rsquared_df, "rsquared_values.csv", row.names = FALSE)
+
