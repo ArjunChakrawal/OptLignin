@@ -127,6 +127,11 @@ getEstimate <- function(model){
   exp(10*beta_T)
 }
 
+getEstimate(models$`log(v_H)`)
+getEstimate(models$`log(avg. v_O)`)
+getEstimate(models$`log(max v_O)`)
+
+
 getBoot_vh = function(data, k){
   fitNew = lmer(log(vhmax)~ (sTemp+sCN0+sARC0)^2 + (1|studyID),data = data[k,],REML = FALSE)
   return(getEstimate(fitNew))

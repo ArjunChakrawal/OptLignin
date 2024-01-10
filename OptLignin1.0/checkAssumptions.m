@@ -1,5 +1,5 @@
 function [lme,tbl] = checkAssumptions(data, target, pred_formula, fname, varargin)
-%% Fit and performs diagnostic checks for a linear regression model
+% Fit and performs diagnostic checks for a linear regression model
 
 p = [];
 e = [];
@@ -110,16 +110,14 @@ end
 
 
 %% image plot for estimates and their significance
+rsquared_values = readtable('rsquared_values.csv');
+r2_marg = rsquared_values.marginal_MarginalR2;
+%%
 
 fig=figure;tiledlayout('flow')
-fig.Position(3:4)=[902, 307];
+fig.Position(3:4)=[1000, 307];
 set(gcf, 'Color', 'w')
 nexttile
-% map = [240,59,32; ...
-%     mean([240,59,32; 255, 255, 255], 1); ...
-%     255, 255, 255; ...
-%     mean([26, 133, 255; 255, 255, 255], 1); ...
-%     26, 133, 255] / 255;
 pval = 0.95; % significance threshold for all analyses
 est = e ./ abs(e); % vector of postive:+1 or negative:-1 effect
 % zz map pvalue significant:1, marginally significant:0.5, and not significant:0
@@ -129,8 +127,11 @@ zz(p > 1-pval) = 0;
 zz(p > 1-pval & p < 0.1) = 0.5;
 
 zzz = zz .* est;
-sz=size(p);
-image(zzz(2:sz(1), :)', 'CDataMapping', 'scaled'); hold on
+sz_zzz=size(zzz);
+im=zzz(2:sz_zzz(1), :)';
+sz_im=size(im);
+im=[im,zeros(sz_im(1),1)];
+image(im, 'CDataMapping', 'scaled'); hold on
 % heatmap(zzz(2:length(p), :)')
 % Define the color map
 cmap = [255, 102, 102; % red
@@ -142,6 +143,8 @@ numLevels = 5;
 customCmap = interp1(linspace(-1, 1, 3), cmap, linspace(-1, 1, numLevels));
 colormap(customCmap)
 
+% e= [e;r2_marg'];
+sz=size(p);
 for j = 1:length(target)
     for i = 2:sz(1)
         %         if zzz(i, j) ~= 0
@@ -161,9 +164,17 @@ for j = 1:length(target)
     end
 end
 
-xticks(1:sz-1);
+for i = 1:length(target)
+    str = ['(',num2str(rsquared_values.marginal_MarginalR2(i), 2),...
+    ' , ',num2str(rsquared_values.conditional_ConditionalR2(i), 2),')'];
+    text(7,i, str, 'HorizontalAlignment', 'center',...
+            'FontWeight','normal',FontSize=11,FontName='Serif',Color=[1 1 1]*0.1); 
+end
+
+sz_im=size(im);
+xticks(1:sz_im(2));
 yticks(1:length(target));
-xticklabels(mdl.CoefficientNames(2:end))
+xticklabels([mdl.CoefficientNames(2:end),"({\itr^2_{marg} , r^2_{cond}})"])
 yticklabels(target)
 title("Y"+ pred_formula,'fontsize',11)
 % str='Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1';

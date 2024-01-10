@@ -23,13 +23,6 @@ for i =1:length(study)
     rawdata.studyID(idd)=id(i);
 end
 
-% rawdata.vhmax=rawdata.vhmax*365; % per year
-% rawdata.avg_vo = rawdata.avg_vo*365; % per year
-% rawdata.max_vo = rawdata.max_vo*365; % per year
-% rawdata.voAtTau = rawdata.voAtTau*365; % per year
-
-rawdata.tau = rawdata.tau; % in year
-c= quantile(rawdata.tau, .5)^2/quantile(rawdata.tau, .75);
 c= min(rawdata.tau(rawdata.tau>0))/2;
 rawdata.tautf = log(rawdata.tau+c);
 
@@ -59,6 +52,10 @@ writetable(tempdata,"data_forRStudio.xlsx")
 col={'studyID','MAT_S','MAP_S','CN0_S','ARC0_S','tautf','logro','logvh','logavgvo','logmax_vo'};
 
 %% final regression
+Rpath = 'C:\PROGRA~1\R\R-43~1.2\bin\x64';
+RscriptFileName = 'rsquared_values.R';
+RunRcode(RscriptFileName, Rpath)
+
 rawdata.studyID = categorical(rawdata.studyID);
 rawdata.LitterType = categorical(rawdata.LitterType);
 
@@ -67,32 +64,25 @@ pred_formula='~ MAT_S*ARC0_S+MAT_S*CN0_S+CN0_S*ARC0_S  + (1|studyID)';
 [lme,~] =checkAssumptions(rawdata,target,pred_formula,'lme','FitMethod','ML');
 yticklabels({'log($\tau$+K)','log({$r_O$})','log({$v_H$})', ...
     'log($\bar{v}_O$)','log(max(${v}_O$))'})
-xticklabels({'MAT_S','\it{CN_{0,S}}','{\itARC_{0,S}}','MAT_S\times{\itCN_{0,S}}','MAT_S\times{\itARC_0_S}','\itCN_{0,S}\times{\itARC_{0,S}}'})
 yaxisproperties= get(gca, 'YAxis');
 yaxisproperties.TickLabelInterpreter = 'latex';   % tex for y-axis
+xticklabels({'MAT_S','\it{CN_{0,S}}','{\itARC_{0,S}}','MAT_S\times{\itCN_{0,S}}' ...
+    ,'MAT_S\times{\itARC_0_S}','\itCN_{0,S}\times{\itARC_{0,S}}',...
+    "({\itr^2_{marg} , r^2_{cond}})"})
+
 title('')
 exportgraphics(gcf, 'results\Figure6.png', Resolution=300)
-%% Temperature sensitivity Q10
-close all
-target ={'tautf','logro','logvh','logavgvo','logmax_vo'};
-pred_formula='~ MAT_S*ARC0_S+MAT_S*CN0_S+CN0_S*ARC0_S  + (1|studyID)';
-[lme,~] =checkAssumptions(rawdata,target,pred_formula,'lme','FitMethod','ML');
+
+% Temperature sensitivity Q10
 
 beta_vh =lme{3}.Coefficients.Estimate(2)/std(rawdata.MATC);
-Q10_vh = exp(10*beta_vh);
-
-beta_vh_se = lme{3}.Coefficients.SE(2)/std(rawdata.MATC);
-
 beta_avgvo =lme{4}.Coefficients.Estimate(2)/std(rawdata.MATC);
-beta_avgvo_se = lme{4}.Coefficients.SE(2)/std(rawdata.MATC);
-
 beta_maxvo =lme{5}.Coefficients.Estimate(2)/std(rawdata.MATC);
-beta_maxvo_se = lme{5}.Coefficients.SE(2)/std(rawdata.MATC);
 
 
-Q10_vh = exp(10*beta_vh);Q10_vh_se = exp(10*beta_vh_se);
-Q10_avgvo = exp(10*beta_avgvo);Q10_avgvo_se = exp(10*beta_avgvo_se);
-Q10_maxvo= exp(10*beta_maxvo);Q10_maxvo_se = exp(10*beta_maxvo_se);
+Q10_vh = exp(10*beta_vh);
+Q10_avgvo = exp(10*beta_avgvo);
+Q10_maxvo= exp(10*beta_maxvo);
 coeff_T_Allison2018_hydro = log(mean([1.6,2.25]))*std(rawdata.MATC)/10;
 coeff_T_Allison2018_ligno = log(1.4)*std(rawdata.MATC)/10;
 
