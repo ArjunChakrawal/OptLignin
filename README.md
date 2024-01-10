@@ -1,4 +1,6 @@
 # OptLignin
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10481394.svg)](https://doi.org/10.5281/zenodo.10481394)
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20@ArjunChakrawal)](https://twitter.com/ArjunChakrawal)
 
 This repository contains the code and resources in support of the article titled "Optimal ligninolytic activity during plant litter decomposition" by  Chakrawal et al. 2024.
 
