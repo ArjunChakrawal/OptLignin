@@ -2,7 +2,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10481394.svg)](https://doi.org/10.5281/zenodo.10481394)
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20@ArjunChakrawal)](https://twitter.com/ArjunChakrawal)
 
-This repository contains the data and scripts used in the publication "Optimal ligninolytic activity during plant litter decomposition" by  Chakrawal et al., 2024.
+This repository contains the data and scripts used in the publication "Modelling optimal ligninolytic activity during plant litter decomposition" by  Chakrawal et al., 2024.
 
 In our study, we investigated optimal control problems related to ligninolytic activity during plant litter decomposition. We utilized a MATLAB-based tool developed by Viktor Leek at the Division of Vehicular Systems, Linköping University. For detailed installation guidelines and examples, please visit [Yoptimization](https://www.yoptimization.com/). To ensure the reproducibility of our work, we have archived the specific Yoptimization version used in our repository. It's important to note that another necessary component for Yoptimization is CasADi; specifically, we utilized the [casadi-windows-matlabR2016a-v3.5.5 version](https://github.com/casadi/casadi/releases/download/3.5.5/casadi-windows-matlabR2016a-v3.5.5.zip).
 
